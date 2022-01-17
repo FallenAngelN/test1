@@ -24,8 +24,8 @@
     if (cookie != null && cookie.getValue().equals("admin")) {
         isLoggedIn = true;
         if (request.getParameter("add-button") != null) {
-            String startDateExpedition = request.getParameter("inputMineralSample");
-            String endDateExpedition = request.getParameter("originSample");
+            String startDateExpedition = request.getParameter("dateStartExpedition");
+            String endDateExpedition = request.getParameter("dateEndExpedition");
 			String geologName = request.getParameter("geologExpedition");
 			Geologist geolog = Database.getGeologByName(geologName);
 			int sampleId = Integer.parseInt(request.getParameter("sampleExpedition"));
