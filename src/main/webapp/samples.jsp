@@ -24,11 +24,11 @@
     if (cookie != null && cookie.getValue().equals("admin")) {
         isLoggedIn = true;
         if (request.getParameter("add-button") != null) {
-			Mineral minerals=new Mineral();
-            minerals.name = request.getParameter("inputMineralSample");
+            String nameMineral = request.getParameter("inputMineralSample");
             String origin = request.getParameter("originSample");
             String detection = request.getParameter("detectionSample");
             String source = request.getParameter("sourceSample");
+			Mineral minerals = Database.getMineralByName(nameMineral);
             Admin.addSample(minerals, origin, detection, source);
         }
         if (request.getParameter("delete-button") != null) {
