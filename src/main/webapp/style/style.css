@@ -134,7 +134,7 @@ button:hover {
     margin-right: auto;
 }
 .add-form {
-    margin: 30px;
+    margin: 0px -120px;
 }
 .content-area {
     display: flex;
