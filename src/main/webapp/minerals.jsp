@@ -94,7 +94,7 @@
 <main>
     <div class="main-area" style="padding-left: 10%">
         <div style="margin-bottom: 30px ">
-            <h3>Поиск</h3>
+            <h3 style="margin:0px -120px;">Поиск</h3>
             <input class="input-background" type="text" placeholder="Поиск" id="search-text" onkeyup="tableSearch()">
         </div>
         <div class="flex-box">
