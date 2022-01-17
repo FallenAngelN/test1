@@ -22,7 +22,7 @@ public class Expedition{
                 .toString();
 	}
 	
-	public Expedition(String startDate,String endDate,Geologist[] geologists,Sample[] samples,String gatheringPlace){
+	public Expedition(String startDate,String endDate,Geologist geologists,Sample samples,String gatheringPlace){
 		this.id=++count;
 		this.startDate=startDate;
 		this.endDate=endDate;
