@@ -116,7 +116,7 @@
                         <tr>
                             <td><input type="checkbox" name=<%="checkbox"+sample.getId()%> value="<%=sample.getId()%>"></td>
                             <td><%=sample.getId()%></td>
-                            <td><%=sample.getMinerals()%></td>
+                            <td><%=sample.getMinerals().getName()%></td>
                             <td><%=sample.getOrigin()%></td>
                             <td><%=sample.getDetection()%></td>
                             <td><%=sample.getSource()%></td>
@@ -129,6 +129,7 @@
             </div>
             <div class="add-area">
                 <form class="add-form" action="" method="post">
+					Входящий минерал:
                     <select required name="inputMineralSample" class="input-background">
                         <option value=""></option>
                         <%
