@@ -21,7 +21,7 @@ public class Sample{
                 .toString();
 	}
 	
-	public Sample(Mineral minerals,String origin,String detection,String source){
+	public Sample(String minerals,String origin,String detection,String source){
 		this.id=++count;
 		this.minerals=minerals;
 		this.origin=origin;
@@ -31,6 +31,7 @@ public class Sample{
 	
 	public Sample(){
 		id=++count;
+		minerals=new Mineral();
 		origin=randomSymbols();
 		detection=randomSymbols();
 		source=randomSymbols();
