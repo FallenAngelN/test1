@@ -38,6 +38,27 @@ public class Expedition{
 		gatheringPlace=randomSymbols();
 	}
 	
+	public int getId(){
+		return id;
+	}
 	
+	public String getStartDate(){
+		return startDate;
+	}
+	public getEndDate(){
+		return endDate;
+	}
+	
+	public Geologist getGeologists(){
+		return geologists;
+	}
+	
+	public Sample getSamples(){
+		return samples;
+	}
+	
+	public String getGatheringPlace(){
+		return gatheringPlace;
+	}
 	
 }
