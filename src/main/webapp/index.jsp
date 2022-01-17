@@ -3,7 +3,7 @@
 <%@ page import="com.example.storehouse.Database" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    if (!Database.isEnable)Database.Init(10, 10, 10);
+    if (!Database.isEnable)Database.Init(10, 10, 10,10);
     Cookie[] cookies = request.getCookies();
     String cookieName = "status";
     Cookie cookie = null;
