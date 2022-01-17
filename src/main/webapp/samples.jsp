@@ -24,7 +24,7 @@
     if (cookie != null && cookie.getValue().equals("admin")) {
         isLoggedIn = true;
         if (request.getParameter("add-button") != null) {
-            String minerals = request.getParameter("inputMineralSample");
+            Mineral minerals = request.getParameter("inputMineralSample");
             String origin = request.getParameter("originSample");
             String detection = request.getParameter("detectionSample");
             String source = request.getParameter("sourceSample");
