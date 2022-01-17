@@ -28,8 +28,8 @@
             String endDateExpedition = request.getParameter("originSample");
 			String geologName = request.getParameter("geologExpedition");
 			Geologist geolog = Database.getGeologByName(geologName);
-			int sampleId = request.getParameter("sampleExpedition");
-			Sample sample = Database.getSampleByID(sampleId);
+			String sampleId = request.getParameter("sampleExpedition");
+			Sample sample = Database.getSampleByID(int.Parse(sampleId));
 			String gatheringPlace = request.getParameter("placeExpedition");
             Admin.addExpedition(startDateExpedition, endDateExpedition, geolog, sample,gatheringPlace);
         }
