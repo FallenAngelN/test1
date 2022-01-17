@@ -33,8 +33,8 @@ public class Expedition{
 	
 	public Expedition(){
 		id=++count;
-		startDate="16.01.2022";
-		endDate="17.01.2022";
+		startDate="2022.01.16";
+		endDate="2022.01.17";
 		geologists=new Geologist();
 		samples=new Sample();
 		gatheringPlace=randomSymbols();
