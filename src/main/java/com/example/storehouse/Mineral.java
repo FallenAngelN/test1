@@ -28,6 +28,7 @@ public class Mineral{
 		this.id=++count;
 		this.name=name;
 		this.classification=classification;
+		this.condition=condition;
 		this.solid=solid;
 		this.internalProperties=internalProperties;
 		this.chemical=chemical;
@@ -35,9 +36,16 @@ public class Mineral{
 	}
 	
 	public Mineral(){
+		Random rnd=new Random();
 		id=++count;
 		name=randomSymbols();
 		classification=randomSymbols();
+		if(rnd.Next(0,20)>10){
+		condition="Твёрдое";
+		}
+		else{
+		condition="Жидкое";	
+		}
 		solid=randomSymbols();
 		internalProperties=randomSymbols();
 		chemical=randomSymbols();
