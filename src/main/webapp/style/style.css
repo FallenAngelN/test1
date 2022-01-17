@@ -96,7 +96,7 @@ button:hover {
 .product-table {
     width: 100%;
     border: none;
-    margin: 20px auto;
+    margin: -20px auto;
     text-align: left;
 }
 .product-table thead th {
