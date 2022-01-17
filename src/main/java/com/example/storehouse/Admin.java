@@ -37,7 +37,7 @@ public class Admin {
     }
 	
 	public static void removeExpedition(int id){
-        Database.expedition.remove(Database.getExpeditionByID(id));
+        Database.expeditionList.remove(Database.getExpeditionByID(id));
     }
 	
 	
