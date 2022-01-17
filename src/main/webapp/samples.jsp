@@ -128,7 +128,14 @@
             </div>
             <div class="add-area">
                 <form class="add-form" action="" method="post">
-                    Входящий минерал <input  class="input-background" name="inputMineralSample"><br/>
+                    <select required name="inputMineralSample" class="input-background">
+                        <option value=""></option>
+                        <%
+                            for (Mineral mineral : Database.mineralList) {
+                        %>
+                        <option value="<%=mineral.getName()%>"><%=mineral.getName()%></option>
+                        <%}%>
+                    </select><br/>
 					Происхождение: <input  class="input-background" name="originSample"><br/>
 					Место обнаружения: <input  class="input-background" name="detectionSample"><br/>
 					Источник: <input  class="input-background" name="sourceSample"><br/>
