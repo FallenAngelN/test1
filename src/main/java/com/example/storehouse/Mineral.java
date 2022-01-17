@@ -37,10 +37,11 @@ public class Mineral{
 	
 	public Mineral(){
 		Random rnd=new Random();
+		int value=rnd.Next(0,20);
 		id=++count;
 		name=randomSymbols();
 		classification=randomSymbols();
-		if(rnd.Next(0,20)>10){
+		if(value>10){
 		condition="Твёрдое";
 		}
 		else{
