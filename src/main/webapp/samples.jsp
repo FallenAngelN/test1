@@ -28,7 +28,7 @@
             String origin = request.getParameter("originSample");
             String detection = request.getParameter("detectionSample");
             String source = request.getParameter("sourceSample");
-            Admin.addSample(minerals, origin, condition, detection, source);
+            Admin.addSample(minerals, origin, detection, source);
         }
         if (request.getParameter("delete-button") != null) {
             for (int i = Database.sampleList.size() - 1; i >= 0; i--) {
