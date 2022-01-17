@@ -31,7 +31,7 @@
             String internalProperties = request.getParameter("internalPropertiesMineral");
 			String chemical = request.getParameter("chemicalMineral");
 			String origin = request.getParameter("originMineral");
-            Admin.addProduct(name, type, price, date, quantity, location);
+            Admin.addMineral(name, classification, condition, solid, internalProperties, chemical, origin);
         }
         if (request.getParameter("delete-button") != null) {
             for (int i = Database.mineralList.size() - 1; i >= 0; i--) {
