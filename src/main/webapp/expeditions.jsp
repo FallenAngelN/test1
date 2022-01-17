@@ -28,8 +28,8 @@
             String endDateExpedition = request.getParameter("originSample");
 			String geologName = request.getParameter("geologExpedition");
 			Geologist geolog = Database.getGeologByName(geologName);
-			String sampleId = request.getParameter("sampleExpedition");
-			Sample sample = Database.getSampleByID(int.Parse(sampleId));
+			int sampleId = Integer.parseInt(request.getParameter("sampleExpedition"));
+			Sample sample = Database.getSampleByID(sampleId);
 			String gatheringPlace = request.getParameter("placeExpedition");
             Admin.addExpedition(startDateExpedition, endDateExpedition, geolog, sample,gatheringPlace);
         }
@@ -119,7 +119,7 @@
                         <tr>
                             <td><input type="checkbox" name=<%="checkbox"+expedition.getId()%> value="<%=expedition.getId()%>"></td>
                             <td><%=expedition.getId()%></td>
-                            <td><%=expedition.getStartDate().getName()%></td>
+                            <td><%=expedition.getStartDate()%></td>
                             <td><%=expedition.getEndDate()%></td>
                             <td><%=expedition.getGeologists().getName()%></td>
                             <td><%=expedition.getSamples().getId()%></td>
