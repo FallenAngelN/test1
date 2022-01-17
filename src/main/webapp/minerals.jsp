@@ -137,6 +137,7 @@
             </div>
             <div class="add-area">
                 <form class="add-form" action="" method="post">
+					Добавление минерала<br>
                     Название минерала: <input  class="input-background" name="mineralName"><br/>
 					Классификация минерала: <input  class="input-background" name="classificationMineral"><br/>
 					Состояние минерала: <select style="width: 233px" required class="input-background" name="conditionMineral" id="">

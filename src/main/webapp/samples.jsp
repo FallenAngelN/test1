@@ -129,6 +129,7 @@
             </div>
             <div class="add-area">
                 <form class="add-form" action="" method="post">
+					Добавление нового образца<br>
 					Входящий минерал:
                     <select required name="inputMineralSample" class="input-background">
                         <option value=""></option>
