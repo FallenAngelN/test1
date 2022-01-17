@@ -129,11 +129,10 @@ button:hover {
     display: flex;
 }
 .add-area {
-    margin-left: auto;
-    margin-right: auto;
+    
 }
 .add-form {
-    margin: -120px 0px;
+    margin: 30px;
 }
 .content-area {
     display: flex;
