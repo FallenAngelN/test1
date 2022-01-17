@@ -21,6 +21,26 @@ public class Admin {
     public static void removeGeolog(int id){
         Database.geologList.remove(Database.getGeologByID(id));
     }
+	
+	public static void addSample(Mineral minerals,String origin,String detection,String source){
+        Sample sample = new Sample(minerals, origin, detection, source);
+        Database.sampleList.add(sample);
+    }
+	
+	public static void removeSample(int id){
+        Database.sampleList.remove(Database.getSampleById(id));
+    }
+	
+	public static void addExpedition(String startDate,String endDate,Geologist geologists,Sample samples,String gatheringPlace){
+        Expedition expedition = new Expedition(startDate, endDate, geologists, samples,gatheringPlace);
+        Database.expeditionList.add(expedition);
+    }
+	
+	public static void removeExpedition(int id){
+        Database.expedition.remove(Database.getExpeditionById(id));
+    }
+	
+	
 /*    public static void addClient(String name, String address, String email, String phone, String role){
         Client client = new Client(name, address, email, phone, role);
         Database.clientList.add(client);
