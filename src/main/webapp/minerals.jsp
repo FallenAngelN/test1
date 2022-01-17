@@ -46,7 +46,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Минералы</title>
     <link rel='stylesheet' type='text/css' href='style/style.css' />
     <script>
@@ -141,8 +141,8 @@
 					Классификация минерала: <input  class="input-background" name="classificationMineral"><br/>
 					Состояние минерала: <select style="width: 233px" required class="input-background" name="conditionMineral" id="">
                     <option value=""></option>
-                    <option value="Электроника">Твёрдое</option>
-                    <option value="Бытовая техника">Жидкое</option>
+                    <option value="Твёрдое">Твёрдое</option>
+                    <option value="Жидкое">Жидкое</option>
                 </select><br/>
 					Тип криссталической решётки, твёрдость, хрупкость: <input  class="input-background" name="solidMineral"><br/>
 					Блеск, цвет, магнитные свойства: <input  class="input-background" name="internalPropertiesMineral"><br/>
