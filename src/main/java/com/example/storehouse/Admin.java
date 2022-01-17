@@ -28,7 +28,7 @@ public class Admin {
     }
 	
 	public static void removeSample(int id){
-        Database.sampleList.remove(Database.getSampleById(id));
+        Database.sampleList.remove(Database.getSampleByID(id));
     }
 	
 	public static void addExpedition(String startDate,String endDate,Geologist geologists,Sample samples,String gatheringPlace){
@@ -37,7 +37,7 @@ public class Admin {
     }
 	
 	public static void removeExpedition(int id){
-        Database.expedition.remove(Database.getExpeditionById(id));
+        Database.expedition.remove(Database.getExpeditionByID(id));
     }
 	
 	
