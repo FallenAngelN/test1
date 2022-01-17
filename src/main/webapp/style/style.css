@@ -93,7 +93,7 @@ button:hover {
     padding: 2px 10px;
     border: none;
     border-radius: 10px;
-	width: 100px;
+	width: 60px;
 }
 .product-table {
     width: 100%;
@@ -132,7 +132,7 @@ button:hover {
     
 }
 .add-form {
-    margin: 30px;
+    margin: 40px;
 }
 .content-area {
     display: flex;
