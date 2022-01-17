@@ -3,7 +3,7 @@
 <%@ page import="com.example.storehouse.Database" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    if (!Database.isEnable)Database.Init(10, 10, 10);
+    if (!Database.isEnable)Database.Init(10, 10, 10,10);
     String loginMessage = null;
     Cookie[] cookies = request.getCookies();
     String cookieName = "status";
@@ -78,9 +78,10 @@
     <nav>
         <ul class="nav-links">
             <li><a href="index.jsp">Главная</a></li>
-            <li><a href="products.jsp">Товары</a></li>
-            <li><a href="order.jsp">Заказы</a></li>
-            <li><a href="clients.jsp">Клиенты</a></li>
+                    <li><a href="minerals.jsp">Минералы</a></li>
+                    <li><a href="samples.jsp">Образцы</a></li>
+                    <li><a href="expeditions.jsp">Экспедиции</a></li>
+                    <li><a href="geologs.jsp">Геологи</a></li>
             <% if (cookie != null){%>
             <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
             <%}%>
