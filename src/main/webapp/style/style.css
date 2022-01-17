@@ -85,6 +85,11 @@ button:hover {
     padding: 2px 1em 0 200px;
     margin: 190px auto;
 }
+
+.table-form{
+	margin: 0px -40px;
+}
+
 .input-background {
     background-color: #525461;
     color: #edf0d1;
@@ -96,7 +101,7 @@ button:hover {
 .product-table {
     width: 100%;
     border: none;
-    margin: -20px auto;
+    margin: 20px auto;
     text-align: left;
 }
 .product-table thead th {
