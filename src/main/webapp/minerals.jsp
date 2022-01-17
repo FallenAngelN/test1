@@ -109,7 +109,7 @@
                             <th>Названиие минерала</th>
                             <th>Классификация минерала</th>
                             <th>Состояние минерала</th>
-                            <th>Тип криссталической решётки, твёрдость, хрупкость</th>
+                            <th>Тип криссталической решётки</th>
                             <th>Блеск, цвет, магнитные свойства</th>
                             <th>Химическая формула</th>
 							<th>Происхождение</th>
@@ -145,7 +145,7 @@
                     <option value="Твёрдое">Твёрдое</option>
                     <option value="Жидкое">Жидкое</option>
                 </select><br/>
-					Тип криссталической решётки, твёрдость, хрупкость: <input  class="input-background" name="solidMineral"><br/>
+					Тип криссталической решётки: <input  class="input-background" name="solidMineral"><br/>
 					Блеск, цвет, магнитные свойства: <input  class="input-background" name="internalPropertiesMineral"><br/>
 					Химическая формула: <input  class="input-background" name="chemicalMineral"><br/>
 					Происхождение: <input  class="input-background" name="originMineral"><br/>
