@@ -45,7 +45,7 @@ public class Expedition{
 	public String getStartDate(){
 		return startDate;
 	}
-	public getEndDate(){
+	public String getEndDate(){
 		return endDate;
 	}
 	
