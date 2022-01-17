@@ -120,14 +120,14 @@
                             for(Mineral mineral: Database.mineralList) {%>
                         <tr>
                             <td><input type="checkbox" name=<%="checkbox"+mineral.getId()%> value="<%=mineral.getId()%>"></td>
-                            <td><%=product.getId()%></td>
-                            <td><%=product.getName()%></td>
-                            <td><%=product.getClassification()%></td>
-                            <td><%=product.getCondition()%></td>
-                            <td><%=product.getSolid()%></td>
-                            <td><%=product.getInternalProperties()%></td>
-                            <td><%=product.getChemical()%></td>
-							<td><%=product.getOrigin()%></td>
+                            <td><%=mineral.getId()%></td>
+                            <td><%=mineral.getName()%></td>
+                            <td><%=mineral.getClassification()%></td>
+                            <td><%=mineral.getCondition()%></td>
+                            <td><%=mineral.getSolid()%></td>
+                            <td><%=mineral.getInternalProperties()%></td>
+                            <td><%=mineral.getChemical()%></td>
+							<td><%=mineral.getOrigin()%></td>
                         </tr>
                         <%  }%>
                         </tbody>
