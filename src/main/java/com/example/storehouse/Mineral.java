@@ -36,17 +36,11 @@ public class Mineral{
 	}
 	
 	public Mineral(){
-		Random rnd=new Random();
-		int value=rnd.Next(0,20);
+
 		id=++count;
 		name=randomSymbols();
 		classification=randomSymbols();
-		if(value>10){
-		condition="Твёрдое";
-		}
-		else{
-		condition="Жидкое";	
-		}
+		condition=(Math.random()>(0.5))?"Твёрдое":"Жидкое";
 		solid=randomSymbols();
 		internalProperties=randomSymbols();
 		chemical=randomSymbols();
