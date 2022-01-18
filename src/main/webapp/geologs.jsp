@@ -111,9 +111,9 @@
                             <td><%=geolog.getId()%></td>
                             <td><%=geolog.getName()%></td>
                             <td><%=geolog.getAddress()%></td>
-                            <td><%=geolog.getPhone().getName()%></td>
-                            <td><%=geolog.getEmail().getId()%></td>
-							<td><%=geolog.getExpedition()%></td>
+                            <td><%=geolog.getPhone()%></td>
+                            <td><%=geolog.getEmail()%></td>
+							<td><%=geolog.getExpedition().getId()%></td>
                         </tr>
                         <%  }%>
                         </tbody>
