@@ -11,7 +11,7 @@ li, a, button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 16px;
-    color: #edf0d1;
+    color: #1326b1;
     text-decoration: none;
 }
 
@@ -64,7 +64,7 @@ button:hover {
     font-size: 14px;
     margin: 30px;
     padding: 20px;
-    color: #edf0d1;
+    color: #442694;
 }
 .content-area {
     display: flex;
