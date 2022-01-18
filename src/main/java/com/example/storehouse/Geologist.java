@@ -9,7 +9,6 @@ public class Geologist{
 	private String address;
 	private String phone;
 	private String email;
-	public Expedition expeditions;
 	
 	private String randomSymbols()
 	{
@@ -22,13 +21,12 @@ public class Geologist{
                 .toString();
 	}
 	
-	public Geologist (String name,String address,String phone,String email,Expedition expeditions){
+	public Geologist (String name,String address,String phone,String email){
 		this.id=++count;
 		this.name=name;
 		this.address=address;
 		this.phone=phone;
 		this.email=email;
-		this.expeditions=expeditions;
 	}
 	
 	public Geologist()
@@ -58,11 +56,6 @@ public class Geologist{
 
     public String getEmail() {
         return email;
-    }
-	
-	public Expedition getExpedition()
-	{
-		return expeditions;
-	}		
+    }		
 }
 
