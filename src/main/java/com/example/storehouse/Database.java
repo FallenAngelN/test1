@@ -20,11 +20,11 @@ public class Database {
         for(int i = 0; i < sampleNum; i++){
             Database.sampleList.add(new Sample());
         }
-        for(int i = 0; i < expeditionNum; i++){
-            Database.expeditionList.add(new Expedition());
-        }
 		for(int i = 0; i < geologNum; i++){
             Database.geologList.add(new Geologist());
+        }
+        for(int i = 0; i < expeditionNum; i++){
+            Database.expeditionList.add(new Expedition());
         }
         isEnable = true;
     }
