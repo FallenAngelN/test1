@@ -24,10 +24,10 @@
     if (cookie != null && cookie.getValue().equals("admin")) {
         isLoggedIn = true;
         if (request.getParameter("delete-button") != null) {
-            for (int i = Database.expeditionList.size() - 1; i >= 0; i--) {
-                if (request.getParameter("checkbox" + Database.expeditionList.get(i).getId()) != null) {
-                    System.out.println(request.getParameter("checkbox" + Database.expeditionList.get(i).getId()));
-                    Admin.removeExpedition(Database.expeditionList.get(i).getId());
+            for (int i = Database.geologList.size() - 1; i >= 0; i--) {
+                if (request.getParameter("checkbox" + Database.geologList.get(i).getId()) != null) {
+                    System.out.println(request.getParameter("checkbox" + Database.geologList.get(i).getId()));
+                    Admin.removeGeolog(Database.geologList.get(i).getId());
                 }
             }
         }
@@ -103,7 +103,6 @@
                             <th>Адрес</th>
                             <th>Телефон</th>
                             <th>Email</th>
-							<th>Экспедиция</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -117,7 +116,6 @@
                             <td><%=geolog.getAddress()%></td>
                             <td><%=geolog.getPhone()%></td>
                             <td><%=geolog.getEmail()%></td>
-							<td><%=Database.expeditionList.get(i).getId()%></td>
                         </tr>
                         <% i++;
 						}%>
