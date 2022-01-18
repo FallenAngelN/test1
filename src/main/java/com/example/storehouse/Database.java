@@ -27,6 +27,11 @@ public class Database {
         for(int i = 0; i < expeditionNum; i++){
             Database.expeditionList.add(new Expedition());
         }
+		int k=0;
+		for(Expedition expedition:expeditionList){
+			expedition.geologists=Database.geologList.get(k);
+			k++;
+		}
 		isEnable = true;
     }
 	
