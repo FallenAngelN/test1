@@ -9,7 +9,7 @@ public class Geologist{
 	private String address;
 	private String phone;
 	private String email;
-	private Expedition expedition;
+	public Expedition expeditions;
 	
 	private String randomSymbols()
 	{
@@ -27,6 +27,7 @@ public class Geologist{
 		this.name=name;
 		this.address=address;
 		this.phone=phone;
+		this.email=email;
 		this.expedition=expedition;
 	}
 	
@@ -36,7 +37,7 @@ public class Geologist{
 		name=randomSymbols();
 		address=randomSymbols();
 		phone="81234567891";
-		expedition=new Expedition();
+		email=randomSymbols()+"@mail.ru";
 	}
 	
 	public int getId() {

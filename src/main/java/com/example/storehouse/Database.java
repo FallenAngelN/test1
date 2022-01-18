@@ -33,6 +33,16 @@ public class Database {
 			expedition.samples=Database.sampleList.get(k);
 			k++;
 		}
+		k=0;
+		for(Sample sample:sampleList){
+			sample.minerals=Database.mineralList.get(k);
+			k++;
+		}
+		k=0;
+		for(Geologist geolog:geologList){
+			geolog.expeditions=Database.expeditionList.get(k);
+			k++;
+		}
 		isEnable = true;
     }
 	

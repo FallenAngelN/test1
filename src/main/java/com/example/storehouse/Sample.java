@@ -5,7 +5,7 @@ import java.util.Random;
 public class Sample{
 	private static int count = 0;
 	private int id;
-	private Mineral minerals;
+	public Mineral minerals;
 	private String origin;
 	private String detection;
 	private String source;
@@ -31,7 +31,6 @@ public class Sample{
 	
 	public Sample(){
 		id=++count;
-		minerals=new Mineral();
 		origin=randomSymbols();
 		detection=randomSymbols();
 		source=randomSymbols();
