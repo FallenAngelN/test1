@@ -14,7 +14,7 @@ public class Database {
 //        productList = new ArrayList<>();
 //        clientList = new ArrayList<>();
 //        orderList = new ArrayList<>();
-		isEnable = true;
+		
         for(int i = 0; i < mineralNum; i++){
             Database.mineralList.add(new Mineral());
         }
@@ -27,6 +27,7 @@ public class Database {
         for(int i = 0; i < expeditionNum; i++){
             Database.expeditionList.add(new Expedition());
         }
+		isEnable = true;
     }
 	
     public static Mineral getMineralByID(int id){
