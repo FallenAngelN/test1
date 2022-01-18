@@ -35,7 +35,7 @@ public class Geologist{
 		id=++count;
 		name=randomSymbols();
 		address=randomSymbols();
-		phone="81234567891";
+		phone="+7(960)-832-22-11";
 		email=randomSymbols();
 		email=email+"@mail.ru";
 	}
