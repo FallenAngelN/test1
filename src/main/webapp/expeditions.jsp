@@ -129,7 +129,7 @@
                             for(Geologist geolog: Database.geologList) {%>
                         <tr>
                             <td><input type="checkbox" name=<%="checkbox"+geolog.getId()%> value="<%=geolog.getId()%>"></td>
-                            <td><%=geologist.getName()%></td>
+                            <td><%=geolog.getName()%></td>
                         </tr>
                         <%  }%>
                         </tbody>
