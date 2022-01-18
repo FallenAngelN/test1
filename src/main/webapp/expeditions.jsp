@@ -115,9 +115,9 @@
                         </thead>
                         <tbody>
                         <%
+                        for(Expedition expedition: Database.expeditionList) {
+						%>
 						<tr>
-                            for(Expedition expedition: Database.expeditionList) {
-								%>
                             <td><input type="checkbox" name=<%="checkbox"+expedition.getId()%> value="<%=expedition.getId()%>"></td>
                             <td><%=expedition.getId()%></td>
                             <td><%=expedition.getStartDate()%></td>
