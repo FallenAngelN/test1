@@ -73,7 +73,7 @@
                 Пароль: <input class="input-background" required type="password" name="password"><br>
                 ФИО: <input style="width: 205px;" class="input-background" required type="text" name="name"><br>
                 Адрес: <input style="width: 185px;" class="input-background" required type="text" name="address"><br>
-                Телефон: <input required class="input-background" value="+7(___)___-__-__" type="tel" placeholder="+7(###)-###-##-##" pattern="\+7\([0-9]{3}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}" name="phone"><br/>
+                Телефон: <input required id="online_phone" class="input-background" value="+7(___)___-__-__" type="tel" placeholder="+7(###)-###-##-##" pattern="\+7\([0-9]{3}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}" name="phone"><br/>
                 Email: <input style="width: 192px;" class="input-background" required type="text" name="email"><br>
                 <input style="width: 150px; margin-left: 17%; text-align: center" class="input-background" type="submit" name="register-button" value="Зарегистрироваться">
             </form>
