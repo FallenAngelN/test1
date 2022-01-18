@@ -23,19 +23,11 @@
     }
     if (cookie != null && cookie.getValue().equals("admin")) {
         isLoggedIn = true;
-        if (request.getParameter("add-button") != null) {
-            String nameMineral = request.getParameter("inputMineralSample");
-            String origin = request.getParameter("originSample");
-            String detection = request.getParameter("detectionSample");
-            String source = request.getParameter("sourceSample");
-			Mineral minerals = Database.getMineralByName(nameMineral);
-            Admin.addSample(minerals, origin, detection, source);
-        }
         if (request.getParameter("delete-button") != null) {
-            for (int i = Database.sampleList.size() - 1; i >= 0; i--) {
-                if (request.getParameter("checkbox" + Database.sampleList.get(i).getId()) != null) {
-                    System.out.println(request.getParameter("checkbox" + Database.sampleList.get(i).getId()));
-                    Admin.removeSample(Database.sampleList.get(i).getId());
+            for (int i = Database.expeditionList.size() - 1; i >= 0; i--) {
+                if (request.getParameter("checkbox" + Database.expeditionList.get(i).getId()) != null) {
+                    System.out.println(request.getParameter("checkbox" + Database.expeditionList.get(i).getId()));
+                    Admin.removeExpedition(Database.expeditionList.get(i).getId());
                 }
             }
         }
@@ -45,7 +37,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Образцы</title>
+    <title>Геологи</title>
     <link rel='stylesheet' type='text/css' href='style/style.css' />
     <script>
         function tableSearch() {
@@ -71,7 +63,7 @@
 <body>
 <%if (!isLoggedIn){
     if(request.getParameter("delete-button")!=null){%>
-<%="<script>alert(\"Вы не являетесь администратором! Для удаления записей требуются права администратора.\")</script>"%>
+<%="<script>alert(\"Вы не являетесь администратором! Для работы с записями требуются права администратора.\")</script>"%>
     <%}}%>
 <header>
     <img class="logo" src="images/temp.png" alt="logo pic">
@@ -100,52 +92,38 @@
         </div>
         <div class="flex-box">
             <div class="table-form">
-                <h3>Образцы</h3>
+                <h3>Геологи</h3>
                 <form action="" method="post">
                     <table id="table-id" class="product-table">
                         <thead>
                         <tr>
                             <th></th>
                             <th>ID</th>
-                            <th>Входящий минерал</th>
-                            <th>Происхождение</th>
-                            <th>Место обнаружения</th>
-                            <th>Источник</th>
+                            <th>ФИО</th>
+                            <th>Адрес</th>
+                            <th>Телефон</th>
+                            <th>Email</th>
+							<th>Экспедиция</th>
                         </tr>
                         </thead>
                         <tbody>
                         <%
-                            for(Sample sample: Database.sampleList) {%>
+						int i=0;
+                            for(Geologist geolog: Database.geologList) {%>
                         <tr>
-                            <td><input type="checkbox" name=<%="checkbox"+sample.getId()%> value="<%=sample.getId()%>"></td>
-                            <td><%=sample.getId()%></td>
-                            <td><%=sample.getMinerals().getName()%></td>
-                            <td><%=sample.getOrigin()%></td>
-                            <td><%=sample.getDetection()%></td>
-                            <td><%=sample.getSource()%></td>
+                            <td><input type="checkbox" name=<%="checkbox"+geolog.getId()%> value="<%=geolog.getId()%>"></td>
+                            <td><%=geolog.getId()%></td>
+                            <td><%=geolog.getName()%></td>
+                            <td><%=geolog.getAddress()%></td>
+                            <td><%=geolog.getPhone()%></td>
+                            <td><%=geolog.getEmail()%></td>
+							<td><%=Database.expeditionList.get(i).getId()%></td>
                         </tr>
-                        <%  }%>
+                        <% i++;
+						}%>
                         </tbody>
                     </table>
                     <input class="input-background" type="submit" name="delete-button" value="Удалить">
-                </form>
-            </div>
-            <div class="add-area">
-                <form class="add-form" action="" method="post">
-					Добавление нового образца<br>
-					Входящий минерал:
-                    <select required name="inputMineralSample" class="input-background">
-                        <option value=""></option>
-                        <%
-                            for (Mineral mineral : Database.mineralList) {
-                        %>
-                        <option value="<%=mineral.getName()%>"><%=mineral.getName()%></option>
-                        <%}%>
-                    </select><br/>
-					Происхождение: <input  class="input-background" name="originSample"><br/>
-					Место обнаружения: <input  class="input-background" name="detectionSample"><br/>
-					Источник: <input  class="input-background" name="sourceSample"><br/>
-                    <input class="input-background" type="submit" name="add-button" value="Добавить">
                 </form>
             </div>
         </div>

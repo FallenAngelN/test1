@@ -72,8 +72,8 @@
 </head>
 <body>
 <%if (!isLoggedIn){
-    if(request.getParameter("add-button")!=null || request.getParameter("delete-button")!=null){%>
-<%="<script>alert(\"Вы не являетесь админом, зайдитие под аккаунтом админа чтобы работать с записями\")</script>"%>
+    if(request.getParameter("delete-button")!=null){%>
+<%="<script>alert(\"Вы не являетесь администратором! Для удаления записей требуются права администратора.\")</script>"%>
     <%}}%>
 <header>
     <img class="logo" src="images/temp.png" alt="logo pic">

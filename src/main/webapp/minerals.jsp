@@ -72,8 +72,8 @@
 </head>
 <body>
 <%if (!isLoggedIn){
-    if(request.getParameter("add-button")!=null || request.getParameter("delete-button")!=null){%>
-<%="<script>alert(\"Вы не являетесь админом, зайдитие под аккаунтом админа чтобы работать с записями\")</script>"%>
+    if(request.getParameter("delete-button")!=null){%>
+<%="<script>alert(\"Вы не являетесь администратором! Для удаления записей требуются права администратора.\")</script>"%>
     <%}}%>
 <header>
     <img class="logo" src="images/temp.png" alt="logo pic">
@@ -83,7 +83,10 @@
             <li><a href="minerals.jsp">Минералы</a></li>
             <li><a href="samples.jsp">Образцы</a></li>
             <li><a href="expeditions.jsp">Экспедиции</a></li>
-            <li><a href="geologs.jsp">Геологи</a></li>
+            <%if (cookie != null && cookie.getValue().equals("admin")){
+				%>
+			<li><a href="geologs.jsp">Геологи</a></li>
+			<%}%>
             <% if (cookie != null){%>
             <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
             <%}%>
