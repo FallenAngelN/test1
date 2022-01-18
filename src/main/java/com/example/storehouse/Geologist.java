@@ -36,6 +36,7 @@ public class Geologist{
 		name=randomSymbols();
 		address=randomSymbols();
 		phone="81234567891";
+		expedition=new Expedition();
 	}
 	
 	public int getId() {

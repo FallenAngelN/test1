@@ -5,7 +5,6 @@ import jakarta.servlet.http.Cookie;
 public class Account {
     private String login;
     private String password;
-    //private Cookie accountLevel;
     private Geologist geolog;
 
     public Account(String login, String password, Geologist geolog){
