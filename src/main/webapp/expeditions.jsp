@@ -115,6 +115,7 @@
                         </thead>
                         <tbody>
                         <%
+						int i=0;
                         for(Expedition expedition: Database.expeditionList) {
 						%>
 						<tr>
@@ -122,11 +123,13 @@
                             <td><%=expedition.getId()%></td>
                             <td><%=expedition.getStartDate()%></td>
                             <td><%=expedition.getEndDate()%></td>
-							<td><%=expedition.getGeologists().getName()%></td>
+							<td><%=Database.geologList.get(i)%></td>
                             <td><%=expedition.getSamples().getId()%></td>
 							<td><%=expedition.getGatheringPlace()%></td>
                         </tr>
-                        <%  }%>
+                        <% 
+						i++;
+						}%>
                         </tbody>
                     </table>
                     <input class="input-background" type="submit" name="delete-button" value="Удалить">
