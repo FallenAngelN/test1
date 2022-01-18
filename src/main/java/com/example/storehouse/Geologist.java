@@ -22,13 +22,13 @@ public class Geologist{
                 .toString();
 	}
 	
-	public Geologist (String name,String address,String phone,String email,Expedition expedition){
+	public Geologist (String name,String address,String phone,String email,Expedition expeditions){
 		this.id=++count;
 		this.name=name;
 		this.address=address;
 		this.phone=phone;
 		this.email=email;
-		this.expedition=expedition;
+		this.expeditions=expeditions;
 	}
 	
 	public Geologist()
@@ -62,7 +62,7 @@ public class Geologist{
 	
 	public Expedition getExpedition()
 	{
-		return expedition;
+		return expeditions;
 	}		
 }
 
