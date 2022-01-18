@@ -121,9 +121,15 @@
                             <td><%=expedition.getId()%></td>
                             <td><%=expedition.getStartDate()%></td>
                             <td><%=expedition.getEndDate()%></td>
-                            <td><%=expedition.getGeologists().getName()%></td>
                             <td><%=expedition.getSamples().getId()%></td>
 							<td><%=expedition.getGatheringPlace()%></td>
+                        </tr>
+                        <%  }%>
+						<%
+                            for(Geologist geolog: Database.geologList) {%>
+                        <tr>
+                            <td><input type="checkbox" name=<%="checkbox"+geolog.getId()%> value="<%=geolog.getId()%>"></td>
+                            <td><%=geologist.getName()%></td>
                         </tr>
                         <%  }%>
                         </tbody>
