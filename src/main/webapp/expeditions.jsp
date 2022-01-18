@@ -10,6 +10,8 @@
 //    System.out.println(dateTime);
     boolean isLoggedIn = false;
     if (!Database.isEnable)Database.Init(10, 10, 10, 10);
+	int i1=0;
+	int i2=0;
     Cookie[] cookies = request.getCookies();
     String cookieName = "status";
     Cookie cookie = null;
@@ -28,8 +30,10 @@
             String endDateExpedition = request.getParameter("dateEndExpedition");
 			String geologName = request.getParameter("geologExpedition");
 			Geologist geolog = Database.getGeologByName(geologName);
+			i1 = geolog.getId();
 			int sampleId = Integer.parseInt(request.getParameter("sampleExpedition"));
 			Sample sample = Database.getSampleByID(sampleId);
+			i2= sample.getId();
 			String gatheringPlace = request.getParameter("placeExpedition");
             Admin.addExpedition(startDateExpedition, endDateExpedition, geolog, sample,gatheringPlace);
         }
@@ -122,11 +126,13 @@
                             <td><%=expedition.getId()%></td>
                             <td><%=expedition.getStartDate()%></td>
                             <td><%=expedition.getEndDate()%></td>
-							<td><%=Database.geologList.get(expedition.getGeologists().getId()).getName()%></td>
-                            <td><%=Database.sampleList.get(expedition.getSamples().getId()).getId()%></td>
+							<td><%=Database.geologList.get(i1).getName()%></td>
+                            <td><%=Database.sampleList.get(i2).getId()%></td>
 							<td><%=expedition.getGatheringPlace()%></td>
                         </tr>
                         <%
+						i1++;
+						i2++;
 						}%>
                         </tbody>
                     </table>
