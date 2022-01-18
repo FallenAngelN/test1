@@ -35,7 +35,6 @@ public class Expedition{
 		id=++count;
 		startDate="2022-01-16";
 		endDate="2022-01-17";
-		geologists=Database.geologList.get(id);
 		samples=new Sample();
 		gatheringPlace=randomSymbols();
 	}
