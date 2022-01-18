@@ -8,6 +8,8 @@
 <%
 //    String dateTime= LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-dd-MM")).toString();
 //    System.out.println(dateTime);
+	int i1=0;
+	int i2=0;
     boolean isLoggedIn = false;
     if (!Database.isEnable)Database.Init(10, 10, 10, 10);
     Cookie[] cookies = request.getCookies();
@@ -28,8 +30,10 @@
             String endDateExpedition = request.getParameter("dateEndExpedition");
 			String geologName = request.getParameter("geologExpedition");
 			Geologist geolog = Database.getGeologByName(geologName);
+			i1=geolog.id;
 			int sampleId = Integer.parseInt(request.getParameter("sampleExpedition"));
 			Sample sample = Database.getSampleByID(sampleId);
+			i2=sample.id;
 			String gatheringPlace = request.getParameter("placeExpedition");
             Admin.addExpedition(startDateExpedition, endDateExpedition, geolog, sample,gatheringPlace);
         }
@@ -123,12 +127,13 @@
                             <td><%=expedition.getId()%></td>
                             <td><%=expedition.getStartDate()%></td>
                             <td><%=expedition.getEndDate()%></td>
-							<td><%=Database.geologList.get(i).getName()%></td>
-                            <td><%=Database.sampleList.get(i).getId()%></td>
+							<td><%=Database.geologList.get(i1).getName()%></td>
+                            <td><%=Database.sampleList.get(i2).getId()%></td>
 							<td><%=expedition.getGatheringPlace()%></td>
                         </tr>
                         <% 
-						i++;
+						i1++;
+						i2++;
 						}%>
                         </tbody>
                     </table>
