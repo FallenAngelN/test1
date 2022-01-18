@@ -30,6 +30,7 @@ public class Database {
 		int k=0;
 		for(Expedition expedition:expeditionList){
 			expedition.geologists=Database.geologList.get(k);
+			expedition.samples=Database.sampleList.get(k);
 			k++;
 		}
 		isEnable = true;

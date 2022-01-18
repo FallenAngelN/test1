@@ -8,7 +8,7 @@ public class Expedition{
 	private String startDate;
 	private String endDate;
 	public Geologist geologists;
-	private Sample samples;
+	public Sample samples;
 	private String gatheringPlace;
 	
 	private String randomSymbols()
@@ -35,7 +35,6 @@ public class Expedition{
 		id=++count;
 		startDate="2022-01-16";
 		endDate="2022-01-17";
-		samples=Database.getSampleByID(id);
 		gatheringPlace=randomSymbols();
 	}
 	
