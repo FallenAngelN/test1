@@ -10,8 +10,6 @@
 //    System.out.println(dateTime);
     boolean isLoggedIn = false;
     if (!Database.isEnable)Database.Init(10, 10, 10, 10);
-	int i1=0;
-	int i2=0;
     Cookie[] cookies = request.getCookies();
     String cookieName = "status";
     Cookie cookie = null;
@@ -85,10 +83,14 @@
             <li><a href="minerals.jsp">Минералы</a></li>
             <li><a href="samples.jsp">Образцы</a></li>
             <li><a href="expeditions.jsp">Экспедиции</a></li>
-            <li><a href="geologs.jsp">Геологи</a></li>
+			<%if (cookie != null && cookie.getValue().equals("admin")){
+				%>
+			<li><a href="geologs.jsp">Геологи</a></li>
+			<%}%>
             <% if (cookie != null){%>
             <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
             <%}%>
+			
         </ul>
     </nav>
     <a class="cta" href="authorization.jsp"><button>Войти</button></a>
@@ -129,8 +131,6 @@
 							<td><%=expedition.getGatheringPlace()%></td>
                         </tr>
                         <%
-						i1++;
-						i2++;
 						}%>
                         </tbody>
                     </table>
