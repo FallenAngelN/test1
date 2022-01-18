@@ -123,7 +123,7 @@
                             <td><%=expedition.getId()%></td>
                             <td><%=expedition.getStartDate()%></td>
                             <td><%=expedition.getEndDate()%></td>
-							<td><%=Database.geologList.get(i)%></td>
+							<td><%=Database.geologList.get(i).getName()%></td>
                             <td><%=expedition.getSamples().getId()%></td>
 							<td><%=expedition.getGatheringPlace()%></td>
                         </tr>
