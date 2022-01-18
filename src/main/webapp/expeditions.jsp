@@ -30,7 +30,7 @@
             String endDateExpedition = request.getParameter("dateEndExpedition");
 			String geologName = request.getParameter("geologExpedition");
 			Geologist geolog = Database.getGeologByName(geologName);
-			i1=geolog.getId();
+			i1=Database.getGeologByName(geologName).getId();
 			int sampleId = Integer.parseInt(request.getParameter("sampleExpedition"));
 			Sample sample = Database.getSampleByID(sampleId);
 			i2=sample.getId();
