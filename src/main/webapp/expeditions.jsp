@@ -123,7 +123,7 @@
                             <td><%=expedition.getEndDate()%></td>
 							<td>
 							<%=
-								Geologist geolog: Database.geologList;
+								Geologist geolog = Database.geologList;
 								geolog.getName();
 							%>
 							</td>
