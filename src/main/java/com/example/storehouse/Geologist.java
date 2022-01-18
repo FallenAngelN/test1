@@ -1,6 +1,7 @@
 package com.example.storehouse;
 
 import java.util.Random;
+import java.lang.String;
 
 public class Geologist{
 	private static int count = 0;
