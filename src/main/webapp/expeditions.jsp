@@ -114,8 +114,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <%
 						<tr>
+                        <%
 						int i=0;
                             for(Expedition expedition: Database.expeditionList) {
 								%>
