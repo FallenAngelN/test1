@@ -36,7 +36,8 @@ public class Geologist{
 		name=randomSymbols();
 		address=randomSymbols();
 		phone="81234567891";
-		email=string.Concat(randomSymbols(),"@mail.ru");
+		email=randomSymbols();
+		email=email+"@mail.ru";
 	}
 	
 	public int getId() {
