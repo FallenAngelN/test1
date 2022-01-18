@@ -114,8 +114,8 @@
                         </tr>
                         </thead>
                         <tbody>
-						<tr>
                         <%
+						<tr>
                             for(Expedition expedition: Database.expeditionList) {
 								%>
                             <td><input type="checkbox" name=<%="checkbox"+expedition.getId()%> value="<%=expedition.getId()%>"></td>
@@ -126,8 +126,7 @@
                             <td><%=expedition.getSamples().getId()%></td>
 							<td><%=expedition.getGatheringPlace()%></td>
                         </tr>
-                        <% i++;  
-						}%>
+                        <%  }%>
                         </tbody>
                     </table>
                     <input class="input-background" type="submit" name="delete-button" value="Удалить">
