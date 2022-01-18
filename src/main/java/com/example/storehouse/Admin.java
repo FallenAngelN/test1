@@ -40,6 +40,10 @@ public class Admin {
         Database.expeditionList.remove(Database.getExpeditionByID(id));
     }
 	
+	public static void addAccount(String login, String password, Geologist geolog){
+        Account account = new Account(login, password, geolog);
+        Database.accountList.add(account);
+   }
 	
 /*    public static void addClient(String name, String address, String email, String phone, String role){
         Client client = new Client(name, address, email, phone, role);
@@ -55,10 +59,7 @@ public class Admin {
     public static void removeOrder(int id){
         Database.orderList.remove(Database.getOrderByID(id));
     }
-    public static void addAccount(String login, String password, Client client){
-        Account account = new Account(login, password, client);
-        Database.accountList.add(account);
-   }*/ 
+    */ 
 //    public static void removeAccount(int id){
 //        Database.productList.remove(Database.getProductByID(id));
 //    }
