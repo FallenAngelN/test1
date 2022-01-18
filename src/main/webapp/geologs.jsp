@@ -1,9 +1,15 @@
-<%@ page import="com.example.storehouse.*" %>
 <%@ page import="javax.xml.crypto.Data" %>
-<%@ page import="com.example.storehouse.Database" %>
+<%@ page import="com.example.storehouse.*" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    if (!Database.isEnable)Database.Init(10, 10, 10);
+//    String dateTime= LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-dd-MM")).toString();
+//    System.out.println(dateTime);
+    boolean isLoggedIn = false;
+    if (!Database.isEnable)Database.Init(10, 10, 10, 10);
     Cookie[] cookies = request.getCookies();
     String cookieName = "status";
     Cookie cookie = null;
@@ -15,50 +21,108 @@
             }
         }
     }
+    if (cookie != null && cookie.getValue().equals("admin")) {
+        isLoggedIn = true;
+        if (request.getParameter("delete-button") != null) {
+            for (int i = Database.expeditionList.size() - 1; i >= 0; i--) {
+                if (request.getParameter("checkbox" + Database.expeditionList.get(i).getId()) != null) {
+                    System.out.println(request.getParameter("checkbox" + Database.expeditionList.get(i).getId()));
+                    Admin.removeExpedition(Database.expeditionList.get(i).getId());
+                }
+            }
+        }
+    }
 %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Main</title>
-        <link rel='stylesheet' type='text/css' href='style/style.css' />
-    </head>
-    <body>
-        <header>
-            <img class="logo" src="images/temp.png" alt="logo pic">
-            <nav>
-                <ul class="nav-links">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Геологи</title>
+    <link rel='stylesheet' type='text/css' href='style/style.css' />
+    <script>
+        function tableSearch() {
+            var phrase = document.getElementById('search-text');
+            var table = document.getElementById('table-id');
+            var regPhrase = new RegExp(phrase.value, 'i');
+            var flag = false;
+            for (var i = 1; i < table.rows.length; i++) {
+                flag = false;
+                for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+                    flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
+                    if (flag) break;
+                }
+                if (flag) {
+                    table.rows[i].style.display = "";
+                } else {
+                    table.rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<%if (!isLoggedIn){
+    if(request.getParameter("delete-button")!=null){%>
+<%="<script>alert(\"Вы не являетесь админом, зайдитие под аккаунтом админа чтобы работать с записями\")</script>"%>
+    <%}}%>
+<header>
+    <img class="logo" src="images/temp.png" alt="logo pic">
+    <nav>
+        <ul class="nav-links">
             <li><a href="index.jsp">Главная</a></li>
             <li><a href="minerals.jsp">Минералы</a></li>
             <li><a href="samples.jsp">Образцы</a></li>
             <li><a href="expeditions.jsp">Экспедиции</a></li>
             <li><a href="geologs.jsp">Геологи</a></li>
-                    <% if (cookie != null){%>
-                        <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
-                    <%}%>
-                </ul>
-            </nav>
-            <a class="cta" href="authorization.jsp"><button>Войти</button></a>
-        </header>
-        <main>
-            <div class="main-area">
-                <div class="content-area">
-                    <div class="img-area">
-                        <img src="images/warehouse.jpg" alt="">
-                    </div>
-                    <div class="text-area">
-                    <span>
-                        Добро пожаловать в приложение складского учета. <br>
-                        Приложение создано для курса "Технологии программирования" в рамках лабораторной работы № 2.<br>
-                        В данном приложении имеется возможность просматривать уже существующие товары, заказы и существующих клиентов.<br>
-                        Помимо этого, для авторизованных пользователей (админов) имеется возможность добавлять/удалять клиентов, новые
-                        товары и заказы (поставки и выдачи).<br>
-                        Кроме того, имеется возможность получить данные и поставках и выдачах за указанный период времени.<br>
-                        Приятного пользования!
-                    </span>
-                    </div>
-                </div>
+            <% if (cookie != null){%>
+            <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
+            <%}%>
+        </ul>
+    </nav>
+    <a class="cta" href="authorization.jsp"><button>Войти</button></a>
+</header>
+<main>
+    <div class="main-area" style="padding-left: 10%">
+        <div style="margin-bottom: 30px ">
+            <h3>Поиск</h3>
+            <input class="input-background" type="text" placeholder="Поиск" id="search-text" onkeyup="tableSearch()">
+        </div>
+        <div class="flex-box">
+            <div class="table-form">
+                <h3>Геологи</h3>
+                <form action="" method="post">
+                    <table id="table-id" class="product-table">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>ФИО</th>
+                            <th>Адрес</th>
+                            <th>Телефон</th>
+                            <th>Email</th>
+							<th>Экспедиция</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <%
+                            for(Geologist geolog: Database.geologList) {%>
+                        <tr>
+                            <td><input type="checkbox" name=<%="checkbox"+geolog.getId()%> value="<%=geolog.getId()%>"></td>
+                            <td><%=geolog.getId()%></td>
+                            <td><%=geolog.getName()%></td>
+                            <td><%=geolog.getAddress()%></td>
+                            <td><%=geolog.getPhone().getName()%></td>
+                            <td><%=geolog.getEmail().getId()%></td>
+							<td><%=geolog.getExpedition()%></td>
+                        </tr>
+                        <%  }%>
+                        </tbody>
+                    </table>
+                    <input class="input-background" type="submit" name="delete-button" value="Удалить">
+                </form>
             </div>
-        </main>
-    </body>
+        </div>
+    </div>
+</main>
+</body>
 </html>
