@@ -115,17 +115,14 @@
                         </thead>
                         <tbody>
                         <%
-                            for(Expedition expedition: Database.expeditionList) {%>
+                            for(Expedition expedition: Database.expeditionList,Geologist geolog: Database.geologList) {%>
                         <tr>
                             <td><input type="checkbox" name=<%="checkbox"+expedition.getId()%> value="<%=expedition.getId()%>"></td>
                             <td><%=expedition.getId()%></td>
                             <td><%=expedition.getStartDate()%></td>
                             <td><%=expedition.getEndDate()%></td>
 							<td>
-							<%=
-								Geologist geolog = Database.geologList;
-								geolog.getName();
-							%>
+							<%=geolog.getName()%>
 							</td>
                             <td><%=expedition.getSamples().getId()%></td>
 							<td><%=expedition.getGatheringPlace()%></td>
