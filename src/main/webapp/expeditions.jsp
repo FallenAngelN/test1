@@ -30,10 +30,8 @@
             String endDateExpedition = request.getParameter("dateEndExpedition");
 			String geologName = request.getParameter("geologExpedition");
 			Geologist geolog = Database.getGeologByName(geologName);
-			i1 = geolog.getId();
 			int sampleId = Integer.parseInt(request.getParameter("sampleExpedition"));
 			Sample sample = Database.getSampleByID(sampleId);
-			i2= sample.getId();
 			String gatheringPlace = request.getParameter("placeExpedition");
             Admin.addExpedition(startDateExpedition, endDateExpedition, geolog, sample,gatheringPlace);
         }
@@ -126,8 +124,8 @@
                             <td><%=expedition.getId()%></td>
                             <td><%=expedition.getStartDate()%></td>
                             <td><%=expedition.getEndDate()%></td>
-							<td><%=Database.geologList.get(i1).getName()%></td>
-                            <td><%=Database.sampleList.get(i2).getId()%></td>
+							<td><%=expedition.getGeologists().getId()%></td>
+                            <td><%=expedition.getSamples().getId()%></td>
 							<td><%=expedition.getGatheringPlace()%></td>
                         </tr>
                         <%
