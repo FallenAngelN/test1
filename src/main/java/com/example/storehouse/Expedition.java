@@ -35,8 +35,8 @@ public class Expedition{
 		id=++count;
 		startDate="2022-01-16";
 		endDate="2022-01-17";
-		geologists=randomSymbols();
 		samples=new Sample();
+		geologists=Admin.addGeolog(randomSymbols(),randomSymbols,randomSymbols,randomSymbols,samples);
 		gatheringPlace=randomSymbols();
 	}
 	
