@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #24252A;
+    background-color: #132651;
 }
 
 li, a, button {
@@ -24,6 +24,7 @@ header {
 
 .logo {
     cursor: pointer;
+	margin-top: 100px;
     margin-right: auto;
 }
 
