@@ -116,8 +116,8 @@
                         <tbody>
                         <%
                         for(Expedition expedition: Database.expeditionList) {
-						int i1=expedition.getSamples().getId();
-						int i2=expedition.getGeologists().getId();
+						Sample sample=expedition.getSamples();
+						Geologist geolog=expedition.getGeologists();
 						%>
 						<tr>
                             <td><input type="checkbox" name=<%="checkbox"+expedition.getId()%> value="<%=expedition.getId()%>"></td>
