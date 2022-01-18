@@ -73,9 +73,9 @@
                 Пароль: <input class="input-background" required type="password" name="password"><br>
                 ФИО: <input style="width: 205px;" class="input-background" required type="text" name="name"><br>
                 Адрес: <input style="width: 185px;" class="input-background" required type="text" name="address"><br>
-                Телефон: <input style="width: 177px;" class="input-background" required type="text" name="phone"><br>
+                Телефон: <input required class="input-background" type="tel" placeholder="###-###-##-##"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" name="phone"><br/>
                 Email: <input style="width: 192px;" class="input-background" required type="text" name="email"><br>
-                Роль:
                 <input style="width: 150px; margin-left: 17%; text-align: center" class="input-background" type="submit" name="register-button" value="Зарегистрироваться">
             </form>
             <p><%if(registerMessage != null)%><%=registerMessage%></p>
