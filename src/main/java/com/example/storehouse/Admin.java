@@ -13,8 +13,8 @@ public class Admin {
         Database.mineralList.remove(Database.getMineralByID(id));
     }
 	
-	public static void addGeolog(String name,String address,String phone,String email,Expedition expedition){
-        Geologist geolog = new Geologist(name, address, phone, email, expedition);
+	public static void addGeolog(String name,String address,String phone,String email){
+        Geologist geolog = new Geologist(name, address, phone, email);
         Database.geologList.add(geolog);
     }
 	
