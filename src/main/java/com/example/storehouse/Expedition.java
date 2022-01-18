@@ -7,7 +7,7 @@ public class Expedition{
 	private int id;
 	private String startDate;
 	private String endDate;
-	private Geologist geologists;
+	public Geologist geologists;
 	private Sample samples;
 	private String gatheringPlace;
 	
