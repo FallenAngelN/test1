@@ -11,7 +11,7 @@ public class Account {
         this.login = login;
         this.password = password;
         this.geolog = geolog;
-        Admin.addGeolog(geolog.getName(), geolog.getAddress(), geolog.getPhone(), geolog.getEmail(), geolog.getExpedition());
+        Admin.addGeolog(geolog.getName(), geolog.getAddress(), geolog.getPhone(), geolog.getEmail());
     }
 
     public String getLogin() {
