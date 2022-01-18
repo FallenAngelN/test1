@@ -105,6 +105,7 @@
                         </thead>
                         <tbody>
                         <%
+						int i=0;
                             for(Geologist geolog: Database.geologList) {%>
                         <tr>
                             <td><input type="checkbox" name=<%="checkbox"+geolog.getId()%> value="<%=geolog.getId()%>"></td>
@@ -113,9 +114,10 @@
                             <td><%=geolog.getAddress()%></td>
                             <td><%=geolog.getPhone()%></td>
                             <td><%=geolog.getEmail()%></td>
-							<td><%=geolog.getExpedition().getId()%></td>
+							<td><%=Database.expeditionList.get(i).getId()%></td>
                         </tr>
-                        <%  }%>
+                        <% i++;
+						}%>
                         </tbody>
                     </table>
                     <input class="input-background" type="submit" name="delete-button" value="Удалить">
