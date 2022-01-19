@@ -87,14 +87,14 @@
 				%>
 			<li><a href="geologs.jsp">Геологи</a></li>
 			<%}%>
-            <% if (cookie != null&&Database.stat=true;){%>
+            <% if (cookie != null&&Database.stat==true;){%>
             <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
             <%}%>
         </ul>
     </nav>
     <% if (cookie != null){%>
               <a class="cta" href="authorization.jsp" onkeyup="<%
-			  stat=false;
+			  Database.stat=false;
 			  %>"><button>Выйти</button></a>
             <%}else{%>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
