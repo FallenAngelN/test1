@@ -42,7 +42,10 @@
             }
         }
     }
+	else{
 %>
+	<%"<script>alert(\"Вы не являетесь администратоasdasdтся права администратора.\")</script>"%>
+	<%}%>
 <!DOCTYPE html>
 <html>
 <head>
