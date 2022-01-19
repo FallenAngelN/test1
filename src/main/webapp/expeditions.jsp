@@ -21,7 +21,7 @@
             }
         }
     }
-    if (cookie != null && cookie.getValue().equals("admin")) {
+    if (cookie != null) {
         isLoggedIn = true;
         if (request.getParameter("add-button") != null) {
             String startDateExpedition = request.getParameter("dateStartExpedition");
@@ -95,6 +95,7 @@
     <% if (cookie != null && Database.stat!=false){%>
               <a class="cta" href="authorization.jsp" onkeyup="<%
 			  Database.stat=false;
+			  cookie=null;
 			  %>"><button>Выйти</button></a>
             <%}else{%>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
