@@ -28,6 +28,10 @@ header {
     margin-right: auto;
 }
 
+.nav a {
+	font-size:22px;
+}
+
 .nav-links {
     list-style: none;
 }
