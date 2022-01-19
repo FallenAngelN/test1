@@ -96,7 +96,6 @@
 			<%}%>
         </ul>
     </nav>
-    <a class="cta" href="authorization.jsp"><button>Войти</button></a>
 </header>
 <main>
     <div class="main-area" style="padding-left: 10%">

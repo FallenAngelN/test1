@@ -101,7 +101,6 @@
 			<%}%>
         </ul>
     </nav>
-	
 </header>
 <main>
     <div class="main-area" style="padding-left: 10%">
