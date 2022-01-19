@@ -21,12 +21,7 @@
             }
         }
     }
-	if(request.getParameter("exitButton") != null){
-        isLoggedIn = false;
-		Database.stat=false;
-		cookie=null;
-	}
-    if (cookie != null) {
+    if (cookie != null&&Database.stat!=false) {
         isLoggedIn = true;
         if (request.getParameter("add-button") != null) {
             String startDateExpedition = request.getParameter("dateStartExpedition");
@@ -95,22 +90,17 @@
             <% if (cookie != null && Database.stat!=false){%>
             <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
             <%}%>
+			<% if (cookie != null && Database.stat!=false){%>
+				<a class="cta" href="authorization.jsp" onclick="<%Database.stat=false; 
+				%>"><button>Выйти</button></a>
+			<%}else{%>
+				<a class="cta" href="authorization.jsp"><button>Войти</button></a>
+			<%}%>
         </ul>
     </nav>
 	
 </header>
 <main>
-<div>
-<% if (cookie != null && Database.stat!=false){%>
-	<form action="" method="post">
-    
-              <a class="cta" name="exitButton" type="submit" href="authorization.jsp"><button>Выйти</button></a>
-			  </form>
-            <%}else{%>
-            <a class="cta" href="authorization.jsp"><button>Войти</button></a>
-		<%}%>
-	
-	<div>
     <div class="main-area" style="padding-left: 10%">
         <div style="margin-bottom: 30px ">
             <h3>Поиск</h3>
