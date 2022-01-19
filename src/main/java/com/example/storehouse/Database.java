@@ -9,6 +9,7 @@ public class Database {
     public static ArrayList<Geologist> geologList = new ArrayList<>();
 	public static ArrayList<Account> accountList = new ArrayList<>();
     public static boolean isEnable = false;
+	public static boolean stat=false;
 
     public static void Init (int mineralNum, int sampleNum, int expeditionNum,int geologNum){
 //        productList = new ArrayList<>();
