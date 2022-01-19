@@ -101,13 +101,15 @@
 </header>
 <main>
 <div>
+<% if (cookie != null && Database.stat!=false){%>
 	<form action="" method="post">
-    <% if (cookie != null && Database.stat!=false){%>
+    
               <a class="cta" name="exitButton" type="submit" href="authorization.jsp"><button>Выйти</button></a>
+			  </form>
             <%}else{%>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
 		<%}%>
-	</form>
+	
 	<div>
     <div class="main-area" style="padding-left: 10%">
         <div style="margin-bottom: 30px ">
