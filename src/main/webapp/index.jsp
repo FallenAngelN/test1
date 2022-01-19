@@ -20,7 +20,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Main</title>
+        <title>Главная</title>
         <link rel='stylesheet' type='text/css' href='style/style.css' />
     </head>
     <body>
@@ -36,9 +36,15 @@
 					%>
 					<li><a href="geologs.jsp">Геологи</a></li>
 					<%}%>
-                    <% if (cookie != null){%>
-                        <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
-                    <%}%>
+                    <% if (cookie != null && Database.stat!=false){%>
+            <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
+            <%}%>
+			<% if (cookie != null && Database.stat!=false){
+				%>
+				<a class="cta" href="authorization.jsp" <button>Выйти</button></a>
+			<%}else{%>
+				<a class="cta" href="authorization.jsp"><button>Войти</button></a>
+			<%}%>
                 </ul>
             </nav>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>

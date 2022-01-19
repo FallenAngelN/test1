@@ -86,9 +86,15 @@
                     <li><a href="samples.jsp">Образцы</a></li>
                     <li><a href="expeditions.jsp">Экспедиции</a></li>
                     <li><a href="geologs.jsp">Геологи</a></li>
-            <% if (cookie != null){%>
+            <% if (cookie != null && Database.stat!=false){%>
             <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
             <%}%>
+			<% if (cookie != null && Database.stat!=false){
+				%>
+				<a class="cta" href="authorization.jsp" <button>Выйти</button></a>
+			<%}else{%>
+				<a class="cta" href="authorization.jsp"><button>Войти</button></a>
+			<%}%>
         </ul>
     </nav>
     <a class="cta" href="authorization.jsp"><button>Войти</button></a>
