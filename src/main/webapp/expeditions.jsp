@@ -93,10 +93,10 @@
         </ul>
     </nav>
     <% if (cookie != null && Database.stat!=false){%>
-              <a class="cta" href="authorization.jsp" onkeyup="(){<%
+              <a class="cta" href="authorization.jsp" onclick="<%
 			  Database.stat=false;
 			  cookie=null;
-			  %>}"><button>Выйти</button></a>
+			  %>"><button>Выйти</button></a>
             <%}else{%>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
 		<%}%>
