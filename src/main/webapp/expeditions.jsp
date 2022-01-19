@@ -21,6 +21,10 @@
             }
         }
     }
+	if(request.getParameter("exitButton")!=null{
+		Database.stat=false;
+		cookie=null;
+	}
     if (cookie != null) {
         isLoggedIn = true;
         if (request.getParameter("add-button") != null) {
@@ -93,10 +97,7 @@
         </ul>
     </nav>
     <% if (cookie != null && Database.stat!=false){%>
-              <a class="cta" href="authorization.jsp" onclick="<%
-			  Database.stat=false;
-			  cookie.setValue("");
-			  %>"><button>Выйти</button></a>
+              <a class="cta" name="exitButton" href="authorization.jsp"><button>Выйти</button></a>
             <%}else{%>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
 		<%}%>
