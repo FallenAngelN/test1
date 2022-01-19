@@ -52,7 +52,7 @@
             <div class="main-area">
                 <div class="content-area">
                     <div class="img-area">
-                        <img src="images/warehouse.jpg" alt="">
+                        <img class="logoSmall" src="images/warehouse.jpg" alt="">
                     </div>
                     <div class="text-area">
                     <span>
