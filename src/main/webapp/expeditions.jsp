@@ -95,7 +95,7 @@
     <% if (cookie != null && Database.stat!=false){%>
               <a class="cta" href="authorization.jsp" onclick="<%
 			  Database.stat=false;
-			  cookie=null;
+			  cookie.setValue("");
 			  %>"><button>Выйти</button></a>
             <%}else{%>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
