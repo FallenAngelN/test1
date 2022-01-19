@@ -21,7 +21,7 @@
             }
         }
     }
-	if(request.getParameter("exitButton")!= null){
+	if(request.getParameter("exitButton") != null){
         isLoggedIn = false;
 		Database.stat=false;
 		cookie=null;
@@ -97,11 +97,13 @@
             <%}%>
         </ul>
     </nav>
+	<form action="" method="post">
     <% if (cookie != null && Database.stat!=false){%>
               <a class="cta" name="exitButton" type="submit" href="authorization.jsp"><button>Выйти</button></a>
             <%}else{%>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
 		<%}%>
+	</form>
 </header>
 <main>
     <div class="main-area" style="padding-left: 10%">
