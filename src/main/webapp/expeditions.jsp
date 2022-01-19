@@ -97,7 +97,7 @@
         </ul>
     </nav>
     <% if (cookie != null && Database.stat!=false){%>
-              <a class="cta" name="exitButton" href="authorization.jsp"><button>Выйти</button></a>
+              <a class="cta" name="exitButton" type="submit" href="authorization.jsp"><button>Выйти</button></a>
             <%}else{%>
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
 		<%}%>
