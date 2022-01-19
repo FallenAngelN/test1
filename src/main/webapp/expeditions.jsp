@@ -21,7 +21,7 @@
             }
         }
     }
-    if (cookie != null&&Database.stat!=false) {
+    if (cookie != null) {
         isLoggedIn = true;
         if (request.getParameter("add-button") != null) {
             String startDateExpedition = request.getParameter("dateStartExpedition");
