@@ -63,9 +63,9 @@
             <%}%>
 			<% if (cookie != null && Database.stat!=false){
 				%>
-				<a class="cta" href="authorization.jsp">Выйти</a>
+				<li><a class="cta" href="authorization.jsp">Выйти</a></li>
 			<%}else{%>
-				<a class="cta" href="authorization.jsp">Войти</a>
+				<li><a class="cta" href="authorization.jsp">Войти</a></li>
 			<%}%>
         </ul>
     </nav>
