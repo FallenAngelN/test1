@@ -21,7 +21,7 @@
             }
         }
     }
-	if(request.getParameter("exitButton")!=null{
+	if(request.getParameter("exitButton")!=null){
 		Database.stat=false;
 		cookie=null;
 	}
