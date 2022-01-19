@@ -25,6 +25,7 @@
                 status.setMaxAge(24 * 60 * 60);
                 response.addCookie(status);
                 response.sendRedirect("index.jsp");
+				Database.stat=true;
             }
             else {
                 for (Account account : Database.accountList) {
@@ -33,6 +34,7 @@
                         status.setMaxAge(24 * 60 * 60);
                         response.addCookie(status);
                         response.sendRedirect("index.jsp");
+						Database.stat=true;
                     }
                 }
             }
@@ -49,6 +51,7 @@
                 response.addCookie(cookie);
                 System.out.println(cookie.getName() + "=" + cookie.getValue());
                 response.sendRedirect("index.jsp");
+				Database.stat=true;
             }
             else {
                 for (Account account : Database.accountList) {
@@ -58,6 +61,7 @@
                         response.addCookie(cookie);
                         System.out.println(cookie.getName() + "=" + cookie.getValue());
                         response.sendRedirect("index.jsp");
+						Database.stat=true;
                     }
                 }
             }
