@@ -87,7 +87,7 @@
 				%>
 			<li><a href="geologs.jsp">Геологи</a></li>
 			<%}%>
-            <% if (cookie != null&&Database.stat==true;){%>
+            <% if (cookie != null && Database.stat!=true;){%>
             <%="<li style=\"color: aquamarine\">User: "+cookie.getValue()+"</li>"%>
             <%}%>
         </ul>
