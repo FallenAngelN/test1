@@ -97,6 +97,10 @@
             <%}%>
         </ul>
     </nav>
+	
+</header>
+<main>
+<div>
 	<form action="" method="post">
     <% if (cookie != null && Database.stat!=false){%>
               <a class="cta" name="exitButton" type="submit" href="authorization.jsp"><button>Выйти</button></a>
@@ -104,8 +108,7 @@
             <a class="cta" href="authorization.jsp"><button>Войти</button></a>
 		<%}%>
 	</form>
-</header>
-<main>
+	<div>
     <div class="main-area" style="padding-left: 10%">
         <div style="margin-bottom: 30px ">
             <h3>Поиск</h3>
