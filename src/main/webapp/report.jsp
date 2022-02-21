@@ -26,28 +26,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Образцы</title>
+    <title>Обращение</title>
     <link rel='stylesheet' type='text/css' href='style/style.css' />
-    <script>
-        function tableSearch() {
-            var phrase = document.getElementById('search-text');
-            var table = document.getElementById('table-id');
-            var regPhrase = new RegExp(phrase.value, 'i');
-            var flag = false;
-            for (var i = 1; i < table.rows.length; i++) {
-                flag = false;
-                for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
-                    flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
-                    if (flag) break;
-                }
-                if (flag) {
-                    table.rows[i].style.display = "";
-                } else {
-                    table.rows[i].style.display = "none";
-                }
-            }
-        }
-    </script>
 </head>
 <body>
 <%if (!isLoggedIn){
@@ -62,7 +42,7 @@
             <li><a href="minerals.jsp">Минералы</a></li>
             <li><a href="samples.jsp">Образцы</a></li>
             <li><a href="expeditions.jsp">Экспедиции</a></li>
-			<li><a href="report.jsp">Обращение</a></li>
+			<li><a class="gg" href="report.jsp">Обращение</a></li>
             <%if (cookie != null && cookie.getValue().equals("admin")){
 				%>
 			<li><a href="geologs.jsp">Геологи</a></li>
@@ -81,10 +61,7 @@
 </header>
 <main>
     <div class="main-area" style="padding-left: 10%">
-        <div style="margin-bottom: 30px ">
-            <h3>Поиск</h3>
-            <input class="input-background" type="text" placeholder="Поиск" id="search-text" onkeyup="tableSearch()">
-        </div>
+        
         <div class="flex-box">
             <div class="table-form">
                 <h3>Образцы</h3>

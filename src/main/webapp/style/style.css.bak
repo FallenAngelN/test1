@@ -22,9 +22,13 @@ header {
     padding: 30px 10%;
 }
 
+.logoSmall{
+	margin-top:-220px;
+}
+
 .logo {
     cursor: pointer;
-	margin-top: 100px;
+	margin-top: 60px;
     margin-right: auto;
 }
 
