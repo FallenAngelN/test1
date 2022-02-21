@@ -42,7 +42,8 @@
             <li><a href="minerals.jsp">Минералы</a></li>
             <li><a href="samples.jsp">Образцы</a></li>
             <li><a href="expeditions.jsp">Экспедиции</a></li>
-			<li class="gg"><a href="report.jsp">Обращение</a></li>
+			<li ><a href="report.jsp" >Обращение</a></li>
+			<
             <%if (cookie != null && cookie.getValue().equals("admin")){
 				%>
 			<li><a href="geologs.jsp">Геологи</a></li>
@@ -66,8 +67,8 @@
             <div class="table-form">
                 <h3>Заявка</h3>
                 <form action="" method="post">
-                    Тема заявки: <input  class="input-background" name="originSample"><br/>
-					Описание: <br></br><input  class="input-background" name="originSample"><br/>
+                    Тема заявки: <input  class="input-background" name="originSample"><br/><br></br>
+					Описание: <br></br><input  class="input-background" name="originSample" style="width:1200px;height:500px;"><br/><br></br>
 					Контактный email: <input  class="input-background" name="originSample"><br/>
                     <input class="input-background" type="submit" name="delete-button" value="Отправить">
                 </form>
