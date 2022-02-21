@@ -64,7 +64,7 @@
         
         <div class="flex-box">
             <div class="table-form">
-                <h3>Образцы</h3>
+                <h3>Заявка</h3>
                 <form action="" method="post">
                     Тема заявки: <input  class="input-background" name="originSample"><br/>
 					Описание: <br></br><input  class="input-background" name="originSample"><br/>

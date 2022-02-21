@@ -22,6 +22,11 @@ header {
     padding: 30px 10%;
 }
 
+.gg{
+	weight:500px;
+	
+}
+
 .logoSmall{
 	margin-top:-220px;
 }
