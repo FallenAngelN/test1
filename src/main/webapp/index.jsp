@@ -32,6 +32,7 @@
                     <li><a href="minerals.jsp">Минералы</a></li>
                     <li><a href="samples.jsp">Образцы</a></li>
                     <li><a href="expeditions.jsp">Экспедиции</a></li>
+					<li><a href="report.jsp">Обращение</a></li>
                     <%if (cookie != null && cookie.getValue().equals("admin")){
 					%>
 					<li><a href="geologs.jsp">Геологи</a></li>
